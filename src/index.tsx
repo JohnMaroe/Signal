@@ -1,17 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+
+import Login from './pages/Login';
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cabin', sans-serif;
+    color: #eee;
+  };
+
+  :root {
+    font-size: 62.5%;
+  }
+`;
+
+const theme = {
+  colors: {
+    background: '#fca0a0',
+    primary: '#2c2d2f',
+    secundary: '#191720',
+    contrast: '#eee',
+  },
+};
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+    <ThemeProvider theme={theme}>
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+      <GlobalStyle />
+      <Login />
+
+    </ThemeProvider>
+  </React.StrictMode>,
+  document.getElementById('root'),
+);
