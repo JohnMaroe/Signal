@@ -4,7 +4,8 @@ import styled from 'styled-components';
 // Components
 import Loading from '../components/Loading/index';
 import WidgetContainer from '../components/Widget';
-import Landing, { Dot, SignUp } from '../components/Landing';
+import Landing, { SignUp } from '../components/Landing';
+import { Dot } from '../components/Landing/styles';
 import Button from '../components/Button';
 
 import background from '../assets/navybackground.png';
