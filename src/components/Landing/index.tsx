@@ -45,9 +45,32 @@ function Landing({ setWidgetState, widgetStates }: Test) {
         </div>
       </header>
 
+      {window.screen.width > 1000
+        && (
+          <nav>
+            <i className="fas fa-signature" />
+
+            <a href="#">About</a>
+            <a href="#">Company</a>
+            <a href="#">Blog</a>
+          </nav>
+        )}
+
       <section>
-        <Button type="button" onClick={() => setWidgetState(widgetStates.MAIN)}>Log in</Button>
-        <SignUp />
+        <Button type="button" onClick={() => setWidgetState(widgetStates.LOGIN)}>Log in</Button>
+
+        {window.screen.width > 1000
+          && (
+            <Button
+              type="button"
+              secondaryButton
+              onClick={() => setWidgetState(widgetStates.REGISTER)}
+            >
+              Register
+            </Button>
+          )}
+
+        {window.screen.width < 1000 && <SignUp />}
       </section>
     </WidgetContainerLanding>
   );

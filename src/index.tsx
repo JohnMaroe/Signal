@@ -22,7 +22,7 @@ const theme = {
   colors: {
     background: '#fca0a0',
     primary: '#2c2d2f',
-    secundary: '#191720',
+    secondary: '#191720',
     contrast: '#eee',
   },
 };

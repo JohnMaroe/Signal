@@ -8,10 +8,10 @@ const WidgetContainerLanding = styled(WidgetContainer)`
   justify-content: flex-start;
   align-items: center;
 
-  padding-top: 10rem;
-
+  background-color: ${({ theme }) => theme.colors.secondary};
   color: ${({ theme }) => theme.colors.contrast};
   font-weight: 700;
+  padding-top: 10rem;
 
   header {
     .divFlex {
@@ -21,10 +21,11 @@ const WidgetContainerLanding = styled(WidgetContainer)`
 
       .contrastCircle {
         position: absolute;
+        top: -18rem;
         
         border-radius: 50%;
-        width: 20rem;
-        height: 20rem;
+        width: 46rem;
+        height: 46rem;
         background-color: rgba(0,0,0,.5);
       }
       img {
@@ -62,39 +63,73 @@ const WidgetContainerLanding = styled(WidgetContainer)`
 
   @media (min-width: 1000px) {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: 'left right';
-
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 10rem 1fr;
+    grid-template-areas: 'nav right'
+                        'left .';
     position: relative;
     overflow: hidden;
+    padding-top: 0;
 
-    .divFlex {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      grid-area: right;
+    header {
+      .divFlex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-area: right;
 
-      transform: scale(1.8) translateX(-8rem);
-      position: absolute;
-      top: 0;
-      right: 0;
-
-      .contrastCircle {
+        transform: scale(1.8) translateX(-8rem);
         position: absolute;
-        top: -6rem;
-        left: 10rem;
-        transform: scale(2);
-        
-        border-radius: 50%;
-        width: 20rem;
-        height: 20rem;
-        background-color: rgba(0,0,0,.5);
+        top: 0;
+        right: 0;
+        padding: 7rem 0 0 1rem;
+
+        .contrastCircle {
+          position: absolute;
+          top: 1rem;
+          left: 11rem;
+          transform: scale(2);
+          
+          border-radius: 50%;
+          width: 20rem;
+          height: 20rem;
+          background-color: rgba(0,0,0,.5);
+        }
+
+        img {
+          width: 30rem;
+          z-index: 1;
+        }
+      }
+    }
+
+    nav {
+      grid-area: nav;
+
+      padding: 3rem;
+
+      i {
+        font-size: 6rem;
+        transform: rotate(-30deg);
       }
 
-      img {
-        width: 30rem;
-        z-index: 1;
+      a {
+        text-decoration: none;
+        font-size: 2.3rem;
+        display: inline-block;
+
+        &:hover {
+          transform: scale(1.25);
+          transition: 150ms ease;
+        }
+
+        &:nth-child(2) {
+          margin-left: 5rem;
+        }
+
+        &:not(&:last-child) {
+          margin-right: 8rem;
+        }
       }
     }
 

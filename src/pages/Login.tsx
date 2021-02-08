@@ -22,8 +22,9 @@ const Background = styled.div`
 `;
 
 const widgetStates = {
-  MAIN: 'MAIN',
+  LOGIN: 'LOGIN',
   LANDING: 'LANDING',
+  REGISTER: 'REGISTER',
 };
 function LoginLogic() {
   const [widgetState, setWidgetState] = useState(widgetStates.LANDING);
@@ -33,7 +34,7 @@ function LoginLogic() {
 
       {widgetState === 'LANDING' && <Landing widgetStates={widgetStates} setWidgetState={setWidgetState} />}
 
-      {widgetState === 'MAIN' && (
+      {widgetState === 'LOGIN' && (
         <WidgetContainer>
           <WidgetContainer.Image />
 
@@ -69,7 +70,7 @@ function LoginLogic() {
 }
 
 const screenStates = {
-  LOGIN: 'LOGIN',
+  MAIN: 'MAIN',
   LOADING: 'LOADING',
 };
 function Login() {
@@ -77,7 +78,7 @@ function Login() {
 
   useEffect(() => {
     setTimeout(() => {
-      setScreenState(screenStates.LOGIN);
+      setScreenState(screenStates.MAIN);
     }, 1 * 3000);
   }, []);
 
@@ -86,7 +87,7 @@ function Login() {
 
       {screenState === 'LOADING' && <Loading />}
 
-      {screenState === 'LOGIN' && <LoginLogic />}
+      {screenState === 'MAIN' && <LoginLogic />}
 
     </div>
   );

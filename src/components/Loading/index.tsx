@@ -18,7 +18,7 @@ const Overlay = styled.div`
   i {
     position: absolute;
     font-size: 18rem;
-    color: ${({ theme }) => theme.colors.secundary};
+    color: ${({ theme }) => theme.colors.secondary};
 
     animation: signal-flip 1200ms ease forwards;
   }
@@ -27,7 +27,7 @@ const Overlay = styled.div`
     font-size: 6.5rem;
     font-family: 'Lobster Two', sans-serif;
     text-decoration: underline;
-    color: ${({ theme }) => theme.colors.secundary};
+    color: ${({ theme }) => theme.colors.secondary};
 
     transform: rotate(-10deg) translateX(2rem) translateY(0.25rem);
     transition: ease-out;
@@ -48,7 +48,7 @@ const Overlay = styled.div`
   }
 
   @keyframes show-title-desktop {
-    from { opacity: 0; }
+    from { opacity: 0; transform: rotate(-500deg); }
     to { opacity: 1; transform: scale(1.4) rotate(-8deg); }
   }
 
@@ -76,8 +76,8 @@ const Overlay = styled.div`
     }
 
     h1 {
-      animation: show-title-desktop 900ms ease-in forwards;
-      animation-delay: 1200ms;
+      animation: show-title-desktop 500ms ease forwards;
+      animation-delay: 800ms;
     }
   }
 `;
@@ -88,9 +88,12 @@ function Loading() {
       <i className="fas fa-signature" />
       <h1>Signal</h1>
 
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="#8a3e3e" fillOpacity="1" d="M0,32L34.3,42.7C68.6,53,137,75,206,106.7C274.3,139,343,181,411,181.3C480,181,549,139,617,149.3C685.7,160,754,224,823,261.3C891.4,299,960,309,1029,272C1097.1,235,1166,149,1234,117.3C1302.9,85,1371,107,1406,117.3L1440,128L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z" />
-      </svg>
+      {window.screen.width > 1000
+        && (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path fill="#8a3e3e" fillOpacity="1" d="M0,32L34.3,42.7C68.6,53,137,75,206,106.7C274.3,139,343,181,411,181.3C480,181,549,139,617,149.3C685.7,160,754,224,823,261.3C891.4,299,960,309,1029,272C1097.1,235,1166,149,1234,117.3C1302.9,85,1371,107,1406,117.3L1440,128L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z" />
+        </svg>
+        )}
     </Overlay>
   );
 }
