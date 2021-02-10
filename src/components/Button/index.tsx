@@ -22,10 +22,6 @@ const Button = styled.button<ButtonProps>`
     ? ({ theme }) => theme.colors.primary
     : ({ theme }) => theme.colors.background)};
 
-  color: ${(props) => (props.secondaryButton
-    ? ({ theme }) => theme.colors.contrast
-    : ({ theme }) => theme.colors.primary)};
-
   &:hover {
     transform: scale(1.1);
     transition: 150ms ease;
@@ -36,6 +32,10 @@ const Button = styled.button<ButtonProps>`
     display: block;
     height: 100%;
     width: 100%;
+
+    color: ${(props) => (props.secondaryButton
+    ? ({ theme }) => theme.colors.contrast
+    : ({ theme }) => theme.colors.primary)};
   }
 `;
 

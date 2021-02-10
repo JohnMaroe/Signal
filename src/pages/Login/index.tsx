@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // Components
-import WidgetContainer from '../components/Widget';
-import { SignUp } from './Landing';
-import { Dot } from './Landing/styles';
-import Button from '../components/Button';
-import Background from '../components/Background';
+import WidgetContainer from '../../components/Widget';
+import { SignUp } from '../Landing';
+import { Dot } from '../Landing/styles';
+import Button from '../../components/Button';
+import Background from '../../components/Background';
 
 function Login() {
   return (
@@ -14,7 +15,7 @@ function Login() {
         <WidgetContainer.Image />
 
         <WidgetContainer.Content>
-          <i className="fas fa-level-up-alt" />
+          <Link to="/landing"><i className="fas fa-level-up-alt" /></Link>
 
           <main>
             <header>

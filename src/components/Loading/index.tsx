@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { Redirect } from 'react-router-dom';
 
 const Overlay = styled.div`
   position: absolute;
@@ -82,9 +83,23 @@ const Overlay = styled.div`
   }
 `;
 
+const screenStates = {
+  LANDING: 'LANDING',
+  LOADING: 'LOADING',
+};
 function Loading() {
+  const [screen, setScreen] = useState(screenStates.LOADING);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setScreen(screenStates.LANDING);
+    }, 1 * 3000);
+  }, []);
+
   return (
     <Overlay>
+      {screen === 'LANDING' && <Redirect to="/landing" />}
+
       <i className="fas fa-signature" />
       <h1>Signal</h1>
 
