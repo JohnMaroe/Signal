@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
-import Login from './pages/Login';
+import Routes from './Routes';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -29,12 +29,14 @@ const theme = {
 
 ReactDOM.render(
   <React.StrictMode>
+
     <ThemeProvider theme={theme}>
 
       <GlobalStyle />
-      <Login />
+      <Routes />
 
     </ThemeProvider>
+
   </React.StrictMode>,
   document.getElementById('root'),
 );

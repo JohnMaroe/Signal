@@ -29,7 +29,13 @@ const Button = styled.button<ButtonProps>`
   &:hover {
     transform: scale(1.1);
     transition: 150ms ease;
-    text-decoration: underline;
+  }
+
+  a {
+    text-decoration: none;
+    display: block;
+    height: 100%;
+    width: 100%;
   }
 `;
 

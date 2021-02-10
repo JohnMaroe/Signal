@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import WidgetContainer from '../Widget';
+import WidgetContainer from '../../components/Widget';
 
 const WidgetContainerLanding = styled(WidgetContainer)`
   display: flex;

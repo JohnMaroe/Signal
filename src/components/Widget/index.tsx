@@ -81,6 +81,7 @@ WidgetContainer.Content = styled.section`
         padding: 1.8rem;
         border: 1px solid #eee4;
         border-radius: 1rem;
+        outline: none;
 
         background-color: ${({ theme }) => theme.colors.primary};
 
