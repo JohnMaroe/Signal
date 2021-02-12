@@ -11,6 +11,7 @@ const Background = styled.div`
   align-items: center;
 
   background: url(${background});
+  background-color: ${({ theme }) => theme.colors.secondary};
 `;
 
 export default Background;
