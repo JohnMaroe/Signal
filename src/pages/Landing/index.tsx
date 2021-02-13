@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Button from '../../components/Button';
 
 import svgLanding from '../../assets/svgLanding.svg';
+import GalaxyPhone from '../../assets/GalaxyPhone.png';
 import WidgetContainerLanding, { Dot } from './styles';
 import Background from '../../components/Background';
 
@@ -37,7 +38,7 @@ function Landing() {
               <Dot>.</Dot>
             </h2>
             <h2>
-              Find a signal
+              Send a signal
               <Dot>.</Dot>
             </h2>
           </div>
@@ -53,6 +54,10 @@ function Landing() {
               <Link to="/blog">Blog</Link>
             </nav>
           )}
+
+        <div className="phone">
+          <img src={GalaxyPhone} alt="Phone" />
+        </div>
 
         <section>
           <Button type="button">

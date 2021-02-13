@@ -52,6 +52,10 @@ const WidgetContainerLanding = styled(WidgetContainer)`
     }
   }
 
+  .phone {
+    display: none;
+  }
+
   section {
     width: 80%;
 
@@ -65,8 +69,8 @@ const WidgetContainerLanding = styled(WidgetContainer)`
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 10rem 1fr;
-    grid-template-areas: 'nav right'
-                        'left .';
+    grid-template-areas: 'nav svg'
+                        'phone buttons';
     position: relative;
     overflow: hidden;
     padding-top: 0;
@@ -76,7 +80,7 @@ const WidgetContainerLanding = styled(WidgetContainer)`
         display: flex;
         align-items: center;
         justify-content: center;
-        grid-area: right;
+        grid-area: svg;
 
         transform: scale(1.8) translateX(-8rem);
         position: absolute;
@@ -152,15 +156,42 @@ const WidgetContainerLanding = styled(WidgetContainer)`
       }
     }
 
+    .phone {
+      display: block;
+
+      img {
+        height: 45rem;
+
+        animation: phone-move 6000ms ease-in-out infinite; 
+      }
+    }
+
     section {
       width: 35%;
-      grid-area: left;
+      grid-area: buttons;
+      padding-top: 35rem;
+      margin-right: 18rem;
 
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline;
+
+      button {
+        width: 34rem;
+        margin-bottom: 0;
+        
+        &:first-child {
+          margin-right: 4rem;
+        }
+      }
     }
+  }
+
+  @keyframes phone-move {
+    0% { transform: translateY(-1rem); }
+    50% { transform: translateY(1rem); }
+    100% { transform: translateY(-1rem); }
   }
 `;
 

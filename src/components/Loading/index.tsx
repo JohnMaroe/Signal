@@ -34,7 +34,7 @@ const Overlay = styled.div`
     z-index: 1000;
 
     animation: close-the-curtains 900ms ease forwards;
-    animation-delay: 2500ms;
+    animation-delay: 2750ms;
   }
 
   .fa-signature {
@@ -81,7 +81,7 @@ const Overlay = styled.div`
       position: absolute;
       top: 0;
       left: 0;
-      filter: drop-shadow(36px -5px 3.5px #3a3b4455);
+      filter: drop-shadow(36px -5px 3.5px rgba(0,0,0,0.4));
 
       width: 115rem;
       height: 92rem;
@@ -93,7 +93,7 @@ const Overlay = styled.div`
       right: -20rem;
       width: 55rem;
       height: 55rem;
-      filter: drop-shadow(-30px 1px 3.5px #3a3b4455);
+      filter: drop-shadow(-30px 1px 3.5px rgba(0,0,0,0.4));
 
       background-color: #2c2d2f;
       border-radius: 8rem 50% 50% 50%;
@@ -102,7 +102,7 @@ const Overlay = styled.div`
     .wave {
       position: absolute;
       bottom: 0rem;
-      filter: drop-shadow(-10px -17px 3.5px #3a3b4455);
+      filter: drop-shadow(-10px -17px 3.5px rgba(0,0,0,0.4));
     }
   }
 
@@ -172,7 +172,7 @@ function Loading() {
   useEffect(() => {
     setTimeout(() => {
       setScreen(screenStates.LANDING);
-    }, 1 * 3250);
+    }, 1 * 3500);
   }, []);
 
   return (
