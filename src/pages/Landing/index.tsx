@@ -61,7 +61,7 @@ function Landing() {
 
         <section>
           <Button type="button">
-            <Link to="/login">Login</Link>
+            <Link to="/login" className="typewriter">Login</Link>
           </Button>
 
           {window.screen.width > 1000
@@ -70,7 +70,7 @@ function Landing() {
                 type="button"
                 secondaryButton
               >
-                <Link to="/register">Register</Link>
+                <Link to="/register" className="typewriter">Register</Link>
               </Button>
             )}
 

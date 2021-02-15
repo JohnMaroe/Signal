@@ -65,6 +65,7 @@ const WidgetContainerLanding = styled(WidgetContainer)`
     align-items: center;
   }
 
+  // Desktop styles
   @media (min-width: 1000px) {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -115,6 +116,13 @@ const WidgetContainerLanding = styled(WidgetContainer)`
       i {
         font-size: 6rem;
         transform: rotate(-30deg);
+        filter: drop-shadow(-15px 5px 3.5px rgba(0,0,0,0.7));
+        animation: icon-shake 1000ms ease infinite;
+        animation-play-state: paused;
+
+        &:hover {
+          animation-play-state: running;
+        }
       }
 
       a {
@@ -157,32 +165,49 @@ const WidgetContainerLanding = styled(WidgetContainer)`
     }
 
     .phone {
+      position: absolute;
+      bottom: 0rem;
+      left: -19rem;
       display: block;
 
       img {
-        height: 45rem;
+        height: 68rem;
 
-        animation: phone-move 6000ms ease-in-out infinite; 
+        filter: drop-shadow(-30px 15px 3.5px rgba(0,0,0,0.5));
+        animation: phone-move 6000ms ease-in-out infinite;
       }
     }
 
     section {
-      width: 35%;
-      grid-area: buttons;
       padding-top: 35rem;
-      margin-right: 18rem;
+
+      position: absolute;
+      bottom: 8rem;
+      right: -5.5rem;
 
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
       align-items: baseline;
 
       button {
         width: 34rem;
         margin-bottom: 0;
+        padding: 1.6rem;
+        filter: drop-shadow(-10px 15px 3.5px rgba(0,0,0,0.6));
+
+        .typewriter {
+          overflow: hidden;
+          white-space: nowrap;
+          margin: 0 auto;
+
+          font-size: 2.2rem;
+          font-weight: 700;
+          letter-spacing: .15em;
+          animation: typing 2000ms ease forwards;
+        }
         
         &:first-child {
-          margin-right: 4rem;
+          margin-right: 8rem;
         }
       }
     }
@@ -192,6 +217,17 @@ const WidgetContainerLanding = styled(WidgetContainer)`
     0% { transform: translateY(-1rem); }
     50% { transform: translateY(1rem); }
     100% { transform: translateY(-1rem); }
+  }
+
+  @keyframes typing {
+    from { transform: scale(0); }
+    to { transform: scale(1.1); }
+  }
+
+  @keyframes icon-shake {
+    from, to { transform: rotate(0); }
+    33% { transform: rotate(10deg); }
+    66% { transform: rotate(-15deg); }
   }
 `;
 
