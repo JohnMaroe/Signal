@@ -49,9 +49,9 @@ function Landing() {
             <nav>
               <i className="fas fa-signature" />
 
-              <Link to="/about">About</Link>
-              <Link to="/company">Company</Link>
-              <Link to="/blog">Blog</Link>
+              <a href="#">About</a>
+              <a href="#">Company</a>
+              <a href="#">Blog</a>
             </nav>
           )}
 

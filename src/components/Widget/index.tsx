@@ -16,6 +16,7 @@ const WidgetContainer: any = styled.main`
   @media (min-width: 1000px) {
     width: 140rem;
     height: 80rem;
+    transform: scale(0.86);
     display: flex;
     border-radius: .8rem;
   }
@@ -75,24 +76,6 @@ WidgetContainer.Content = styled.section`
       justify-content: center;
 
       margin-bottom: 12rem;
-
-      input {
-        width: 75%;
-        padding: 1.8rem;
-        border: 1px solid #eee4;
-        border-radius: 1rem;
-        outline: none;
-
-        background-color: ${({ theme }) => theme.colors.primary};
-
-        &:first-child {
-          margin-bottom: 2.5rem;
-        }
-
-        &::placeholder {
-          color: #eee5;
-        }
-      }
     }
   }
 

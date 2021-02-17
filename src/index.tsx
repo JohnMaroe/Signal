@@ -24,6 +24,7 @@ const theme = {
     primary: '#2c2d2f',
     secondary: '#191720',
     contrast: '#eee',
+    wrong: '#7a1c2b',
   },
 };
 

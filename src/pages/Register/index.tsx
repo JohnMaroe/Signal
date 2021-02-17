@@ -3,19 +3,20 @@ import { Link } from 'react-router-dom';
 
 // Components
 import WidgetContainer from '../../components/Widget';
-import { SignUp } from '../Landing';
+import { RegisterImage, RegisterContent } from './styles';
 import { Dot } from '../Landing/styles';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import Background from '../../components/Background';
 
-function Login() {
+import female from '../../assets/female.svg';
+import male from '../../assets/male.svg';
+
+function Register() {
   return (
     <Background>
       <WidgetContainer>
-        <WidgetContainer.Image />
-
-        <WidgetContainer.Content>
+        <RegisterContent>
           <Link to="/landing"><i className="fas fa-level-up-alt" /></Link>
 
           <main>
@@ -30,20 +31,32 @@ function Login() {
             </header>
 
             <footer>
-              <label htmlFor="name" />
-              <Input id="name" type="text" placeholder="Phone, email or username" />
-              <label htmlFor="password" />
-              <Input id="password" type="password" placeholder="Password" />
+              <form>
+                <p>
+                  <label htmlFor="eu">Username</label>
+                  <Input id="eu" type="text" placeholder="Phone, email or username" />
+                </p>
+
+                <p>
+                  <label htmlFor="eu2">Password</label>
+                  <Input id="eu2" type="password" placeholder="Password" />
+                </p>
+
+                <p>
+                  <img src={female} alt="female icon" width={75} />
+                  <img src={male} alt="male icon" width={75} />
+                </p>
+              </form>
             </footer>
 
             <Button type="submit">Do it!</Button>
-            <SignUp />
           </main>
+        </RegisterContent>
 
-        </WidgetContainer.Content>
+        <RegisterImage />
       </WidgetContainer>
     </Background>
   );
 }
 
-export default Login;
+export default Register;

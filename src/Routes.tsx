@@ -5,6 +5,7 @@ import Login from './pages/Login/index';
 import Landing from './pages/Landing';
 import Loading from './components/Loading';
 import Error from './pages/Error';
+import Register from './pages/Register';
 
 function Routes() {
   return (
@@ -16,6 +17,8 @@ function Routes() {
         <Route path="/landing" exact component={Landing} />
 
         <Route path="/login" component={Login} />
+
+        <Route path="/register" component={Register} />
 
         <Route component={Error} />
 
