@@ -2,15 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 interface InputProps {
-  type: string,
-  placeholder: string,
-  id: string
+  type: string;
+  placeholder: string;
+  id: string;
 }
 
 const InputType = styled.input`
   width: 75%;
   padding: 1.8rem;
-  border: 1px solid #eee4;
+  border: 2px solid #eee4;
   border-radius: 1rem;
   outline: none;
 
@@ -25,7 +25,11 @@ const InputType = styled.input`
   }
 `;
 
-function Input({ type, placeholder, id }: InputProps) {
+function Input({
+  type,
+  placeholder,
+  id,
+}: InputProps) {
   return (
     <InputType id={id} type={type} placeholder={placeholder} />
   );

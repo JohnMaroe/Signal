@@ -6,6 +6,7 @@ import Landing from './pages/Landing';
 import Loading from './components/Loading';
 import Error from './pages/Error';
 import Register from './pages/Register';
+import Dashboard from './pages/Dashboard';
 
 function Routes() {
   return (
@@ -19,6 +20,8 @@ function Routes() {
         <Route path="/login" component={Login} />
 
         <Route path="/register" component={Register} />
+
+        <Route path="/dashboard" component={Dashboard} />
 
         <Route component={Error} />
 

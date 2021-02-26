@@ -54,14 +54,19 @@ WidgetContainer.Content = styled.section`
       flex-direction: column;
       align-items: left;
       justify-content: center;
+      align-items: center;
 
-      margin-bottom: 11rem;
+      margin-bottom: 8rem;
 
       h1 {
-        font-size: 4.5rem;
+        font-size: 8.5rem;
         display: flex;
         align-items: baseline;
         margin-bottom: 1rem;
+
+        span {
+          font-size: 7rem;
+        }
       }
       h2 {
         font-size: 3rem;
@@ -70,12 +75,35 @@ WidgetContainer.Content = styled.section`
 
     footer {
       width: 100%;
+      height: 14rem;
+
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
 
       margin-bottom: 12rem;
+
+      div {
+        width: 75%;
+        height: 100%;
+        
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &:first-child {
+          margin-bottom: 4rem;
+        }
+
+        label {
+          position: absolute;
+          left: 80px;
+          top: -14px;
+        }
+      }
     }
   }
 

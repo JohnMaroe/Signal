@@ -196,6 +196,7 @@ const WidgetContainerLanding = styled(WidgetContainer)`
         filter: drop-shadow(-10px 15px 3.5px rgba(0,0,0,0.6));
 
         .typewriter {
+          height: 3rem;
           overflow: hidden;
           white-space: nowrap;
           margin: 0 auto;
@@ -231,7 +232,7 @@ const WidgetContainerLanding = styled(WidgetContainer)`
   }
 `;
 
-export const Dot = styled.p`
+export const Dot = styled.span`
   color: ${({ theme }) => theme.colors.background};
   font-size: 5rem;
 `;

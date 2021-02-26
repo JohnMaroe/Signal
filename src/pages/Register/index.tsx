@@ -11,8 +11,15 @@ import Background from '../../components/Background';
 
 import female from '../../assets/female.svg';
 import male from '../../assets/male.svg';
+import other from '../../assets/other.png';
 
 function Register() {
+  function onSubmitForm(e: any) {
+    e.preventDefault();
+
+    console.log('hi');
+  }
+
   return (
     <Background>
       <WidgetContainer>
@@ -22,34 +29,52 @@ function Register() {
           <main>
             <header>
               <h1>
-                Let&apos;s sign you in
+                It&apos;s time
                 <Dot>.</Dot>
               </h1>
 
-              <h2>Welcome back.</h2>
-              <h2>You have been missed!</h2>
+              <h2>Joining us?</h2>
+              <h2>Hope you enjoy!</h2>
             </header>
 
-            <footer>
-              <form>
-                <p>
-                  <label htmlFor="eu">Username</label>
-                  <Input id="eu" type="text" placeholder="Phone, email or username" />
-                </p>
+            <form onSubmit={(e) => onSubmitForm(e)}>
+              <footer>
+                <div>
+                  <label htmlFor="name">Login</label>
+                  <Input id="name" type="text" placeholder="Phone, email or username" />
+                </div>
+                <div>
+                  <label htmlFor="password">Password</label>
+                  <Input id="password" type="password" placeholder="Password" />
+                </div>
+              </footer>
 
-                <p>
-                  <label htmlFor="eu2">Password</label>
-                  <Input id="eu2" type="password" placeholder="Password" />
-                </p>
+              <div>
+                <p>Choose gender:</p>
 
-                <p>
-                  <img src={female} alt="female icon" width={75} />
+                <input type="radio" id="male" name="gender" value="male" />
+                <label htmlFor="male" title="Male">
                   <img src={male} alt="male icon" width={75} />
-                </p>
-              </form>
-            </footer>
+                </label>
 
-            <Button type="submit">Do it!</Button>
+                <input type="radio" id="female" name="gender" value="female" />
+                <label htmlFor="female" title="Female">
+                  <img src={female} alt="female icon" width={75} />
+                </label>
+
+                <input type="radio" id="other" name="gender" value="other" />
+                <label htmlFor="other" title="Other">
+                  <div className="other-icon"><img src={other} alt="other gender icon" /></div>
+                </label>
+              </div>
+
+              <Button type="submit">Do it!</Button>
+            </form>
+
+            <span>
+              By signing up, you agree to our Terms , Data Policy and Cookies Policy
+              <Dot>.</Dot>
+            </span>
           </main>
         </RegisterContent>
 

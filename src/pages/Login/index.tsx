@@ -30,13 +30,34 @@ function Login() {
             </header>
 
             <footer>
-              <label htmlFor="name" />
-              <Input id="name" type="text" placeholder="Phone, email or username" />
-              <label htmlFor="password" />
-              <Input id="password" type="password" placeholder="Password" />
+              <div>
+                <label htmlFor="name">Login</label>
+                <Input
+                  id="name"
+                  type="text"
+                  placeholder="Phone, email or username"
+                />
+              </div>
+              <div>
+                <label htmlFor="password">Password</label>
+                <Input
+                  id="password"
+                  type="password"
+                  placeholder="Password"
+                />
+              </div>
             </footer>
 
-            <Button type="submit">Do it!</Button>
+            <p>
+              <label htmlFor="remember">Remember me: </label>
+              <input type="checkbox" name="remember" id="remember" />
+            </p>
+
+            <Button
+              type="submit"
+            >
+              <Link to="/dashboard">Do it!</Link>
+            </Button>
             <SignUp />
           </main>
 
